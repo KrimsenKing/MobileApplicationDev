@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Nathan App</string>
+    <string name="Hi">Hello World.</string>
+    <string name="Button_Name">Press Me!</string>
+</resources>

@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         } catch (NumberFormatException e) {
             mExpression.setOperand2(0);
         }
-        mNumberDisplay.setText(mExpression.getValue());
+        mNumberDisplay.setText(mExpression.getValue().toString());
     }
 
     @Override

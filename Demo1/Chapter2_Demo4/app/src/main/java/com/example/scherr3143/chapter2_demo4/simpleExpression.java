@@ -10,53 +10,51 @@ public class simpleExpression {
     private String mOperator;
     private Integer mValue;
 
-    public simpleExpression(){
+    public simpleExpression() {
         mOperand1 = 0;
         mOperand2 = 0;
         mOperator = "+";
         mValue = 0;
     }
-    public void setOperand1(int v){
+    public void setOperand1(int v) {
         mOperand1 = v;
     }
-    public int getOperand1(){
+    public int getOperand1() {
         return mOperand1;
     }
-    public void setOperand2(int v){
+    public void setOperand2(int v) {
         mOperand2 = v;
     }
-    public int setOperand2(){
+    public int setOperand2() {
         return mOperand2;
     }
-    public void setOperator(String s){
+    public void setOperator(String s) {
         mOperator = s;
     }
-    public String getOperator(){
+    public String getOperator() {
         return mOperator;
     }
-    public int getValue(){
+    public Integer getValue() {
         computeValue();
         return mValue;
     }
-    public void clearOperands(){
+
+    public void clearOperands() {
         setOperand1(0);
         setOperand2(0);
     }
-    private void computeValue(){
+
+    private void computeValue() {
         mValue = 0;
-        if(mOperator.contentEquals("+")){
+        if (mOperator.contentEquals("+")) {
             mValue = mOperand1 + mOperand2;
-        }
-        else if(mOperator.contentEquals("-")){
+        } else if (mOperator.contentEquals("-")) {
             mValue = mOperand1 - mOperand2;
-        }
-        else if(mOperator.contentEquals("*")){
+        } else if (mOperator.contentEquals("x")) {
             mValue = mOperand1 * mOperand2;
-        }
-        else if(mOperator.contentEquals("/") && mOperand2 != 0){
+        } else if (mOperator.contentEquals("/") && mOperand2 != 0) {
             mValue = mOperand1 / mOperand2;
-        }
-        else {
+        } else {
             mValue = mOperand1 % mOperand2;
         }
     }

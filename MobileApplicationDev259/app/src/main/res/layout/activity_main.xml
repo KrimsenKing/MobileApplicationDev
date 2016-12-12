@@ -9,31 +9,191 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.scherr3143.personnel_app.MainActivity">
 
-    <ImageView
+    <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/imageView"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/person1"/>
+
+    </GridLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/gridLayout" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:text="@string/name"
-        android:id="@+id/textView1" />
+        android:layout_alignBottom="@+id/textView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_alignLeft="@+id/textView1"
-        android:text="@string/personalID"
-        android:textSize="@android:?"
-        android:id="@+id/textView2" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView12"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="48dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_toEndOf="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toStartOf="@+id/textView2"
-        android:layout_below="@+id/textView"></TableLayout>
+        android:layout_height="256dp"
+        android:id="@+id/tableLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_row="1"
+        android:layout_column="0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView3"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView4"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView5"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView6"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supervisor_name"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView7"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supervisor_role"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView8"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/birthdate"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView9"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView10"/>
+
+            <EditText />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/married"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView11"/>
+
+            <EditText />
+        </TableRow>
+    </TableLayout>
+
 </RelativeLayout>

@@ -22,7 +22,7 @@ public class personData {
     private char Married;
 
     public personData(int PersonnelID, int PictureID, String Name, String Address, String Phone, String Email,
-                      String Position, String SupervisorName, String SupervisorRole, Date BirthDate, int Age, char Married)
+                      String Position, String SupervisorName, String SupervisorRole, Date BirthDate,char Married)
     {}
 
     public int getPersonnelID() {

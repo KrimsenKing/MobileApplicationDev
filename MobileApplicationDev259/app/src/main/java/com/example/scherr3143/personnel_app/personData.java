@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by scherr3143 on 12/8/2016.
  */
-public class personData {
+public class personData extends MainActivity {
 
     private int PersonnelID;
     private int PictureID;
@@ -22,8 +22,21 @@ public class personData {
     private char Married;
 
     public personData(int PersonnelID, int PictureID, String Name, String Address, String Phone, String Email,
-                      String Position, String SupervisorName, String SupervisorRole, Date BirthDate,char Married)
-    {}
+                      String Position, String SupervisorName, String SupervisorRole, Date BirthDate,int Age,char Married)
+    {
+        setPersonnelID(PersonnelID);
+        setPictureID(PictureID);
+        setName(Name);
+        setAddress(Address);
+        setPhone(Phone);
+        setEmail(Email);
+        setPosition(Position);
+        setSupervisorName(SupervisorName);
+        setSupervisorRole(SupervisorRole);
+        setBirthDate(BirthDate);
+        setAge(Age);
+        setMarried(Married);
+    }
 
     public int getPersonnelID() {
         return PersonnelID;
@@ -88,11 +101,8 @@ public class personData {
     public int getAge() {
         return Age;
     }
-    public void setAge() {
-        int cYear = Calendar.getInstance().get(Calendar.YEAR);
-        Calendar bYear = Calendar.getInstance();
-        bYear.setTime(BirthDate);
-        Age = cYear - bYear.get(Calendar.YEAR);
+    public void setAge(int age) {
+        Age = age;
     }
     public char getMarried() {
         return Married;

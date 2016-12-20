@@ -17,12 +17,12 @@ public class personData extends MainActivity {
     private String Position;
     private String SupervisorName;
     private String SupervisorRole;
-    private Date BirthDate;
+    private String BirthDate;
     private int Age;
     private char Married;
 
     public personData(int PersonnelID, int PictureID, String Name, String Address, String Phone, String Email,
-                      String Position, String SupervisorName, String SupervisorRole, Date BirthDate,int Age,char Married)
+                      String Position, String SupervisorName, String SupervisorRole, String BirthDate,int Age,char Married)
     {
         setPersonnelID(PersonnelID);
         setPictureID(PictureID);
@@ -92,10 +92,10 @@ public class personData extends MainActivity {
     public void setSupervisorRole(String supervisorRole) {
         SupervisorRole = supervisorRole;
     }
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return BirthDate;
     }
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         BirthDate = birthDate;
     }
     public int getAge() {

@@ -1,17 +1,22 @@
 package com.example.scherr3143.personnel_app;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText PersonnelID;
-    EditText PictureID;
+    ImageView PictureID;
     EditText Name;
     EditText Address;
     EditText PhoneNumber;
@@ -28,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        personData peeps = new personData(854652, 12564, "Joey Time", "468 That Street", "639-456-8564", "timeiseternal@theuniverse.ca",
-                "Tardis Repair Man", "The Doctor", "Time Lord", new Date(1964,6,24), setAge(new Date(1964,6,24)), 'N');
+        personData peeps = new personData(854652, R.drawable.pid12564, "Joey Time", "468 That Street", "639-456-8564", "timeiseternal@theuniverse.ca",
+                "Tardis Repair Man", "The Doctor", "Time Lord", "24-6-1964", setAge("24-6-1964"), 'N');
 
 
 
         PersonnelID = (EditText) findViewById(R.id.editText2);
-        //PictureID = (EditText) findViewById(R.id.editText2);
+        PictureID = (ImageView) findViewById(R.id.imageView1);
         Name = (EditText) findViewById(R.id.editText1);
         Address = (EditText) findViewById(R.id.editText3);
         PhoneNumber = (EditText) findViewById(R.id.editText4);
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         PersonnelID.setText(String.valueOf(peeps.getPersonnelID()));
+        PictureID.setImageResource(peeps.getPictureID());
         Name.setText(peeps.getName());
         Address.setText(peeps.getAddress());
         PhoneNumber.setText(peeps.getPhone());
@@ -60,11 +66,20 @@ public class MainActivity extends AppCompatActivity {
         Married.setText(String.valueOf(peeps.getMarried()));
 
     }
-    public int setAge(Date BirthDate) {
-        int cYear = Calendar.getInstance().get(Calendar.YEAR);
-        Calendar bYear = Calendar.getInstance();
-        bYear.setTime(BirthDate);
-        int Age = cYear - bYear.get(Calendar.YEAR);
+    public int setAge(String BirthDate) {
+        int Age=0;
+        try {
+            int cYear = Calendar.getInstance().get(Calendar.YEAR);
+            SimpleDateFormat df = new SimpleDateFormat("DD-MM-yyyy");
+            Date bd = df.parse(BirthDate);
+            Calendar bYear = Calendar.getInstance();
+            bYear.setTime(bd);
+            Age = cYear - bYear.get(Calendar.YEAR);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         return Age;
     }
 }

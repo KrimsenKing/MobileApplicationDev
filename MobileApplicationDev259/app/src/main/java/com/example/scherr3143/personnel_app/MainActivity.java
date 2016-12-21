@@ -5,7 +5,10 @@ import android.media.Image;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.view.View.OnFocusChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.text.ParseException;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     EditText BirthDate;
     EditText Age;
     EditText Married;
+    private personData personData;
+    //OnFocusChangeListener textListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         personData peeps = new personData(854652, R.drawable.pid12564, "Joey Time", "468 That Street", "639-456-8564", "timeiseternal@theuniverse.ca",
                 "Tardis Repair Man", "The Doctor", "Time Lord", "24-6-1964", setAge("24-6-1964"), 'N');
-
 
 
         PersonnelID = (EditText) findViewById(R.id.editText2);
@@ -66,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
         Married.setText(String.valueOf(peeps.getMarried()));
 
     }
+
     public int setAge(String BirthDate) {
-        int Age=0;
+        int Age = 0;
         try {
             int cYear = Calendar.getInstance().get(Calendar.YEAR);
             SimpleDateFormat df = new SimpleDateFormat("DD-MM-yyyy");
@@ -76,10 +81,63 @@ public class MainActivity extends AppCompatActivity {
             bYear.setTime(bd);
             Age = cYear - bYear.get(Calendar.YEAR);
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return Age;
     }
+
+    private void registerChangeListener(){
+        PersonnelID.setOnFocusChangeListener(textListener);
+        Name.setOnFocusChangeListener(textListener);
+        Address.setOnFocusChangeListener(textListener);
+        PhoneNumber.setOnFocusChangeListener(textListener);
+        Email.setOnFocusChangeListener(textListener);
+        Position.setOnFocusChangeListener(textListener);
+        Supervisor.setOnFocusChangeListener(textListener);
+        SupervisorPos.setOnFocusChangeListener(textListener);
+        BirthDate.setOnFocusChangeListener(textListener);
+        Married.setOnFocusChangeListener(textListener);
+    }
+
+
+    private OnFocusChangeListener textListener = new OnFocusChangeListener(){
+
+        @Override
+        public void OnFocusChange(View v, boolean hasFocus){
+            switch(v.getId()){
+                case R.id.editText2:
+                    personData.setPersonnelID(Integer.valueOf(PersonnelID.toString()));
+                    break;
+                case R.id.editText1:
+
+                    break;
+                case R.id.editText3:
+
+                    break;
+                case R.id.editText4:
+
+                    break;
+                case R.id.editText5:
+
+                    break;
+                case R.id.editText6:
+
+                    break;
+                case R.id.editText7:
+
+                    break;
+                case R.id.editText8:
+
+                    break;
+                case R.id.editText9:
+
+                    break;
+                case R.id.editText11:
+
+                    break;
+            }
+        }
+    };
+
 }

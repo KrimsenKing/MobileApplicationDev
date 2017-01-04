@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         personData peeps = new personData(854652, R.drawable.pid12564, "Joey Time", "468 That Street", "639-456-8564", "timeiseternal@theuniverse.ca",
-                "Tardis Repair Man", "The Doctor", "Time Lord", "24-6-1964", setAge("24-6-1964"), 'N');
+                "Tardis Repair Man", "The Doctor", "Time Lord", "24-6-1964", setAge("24-6-1964"), "N");
 
 
         PersonnelID = (EditText) findViewById(R.id.editText2);
@@ -100,9 +100,8 @@ public class MainActivity extends AppCompatActivity {
         Married.setOnFocusChangeListener(textListener);
     }
 
-
+    @Override
     private OnFocusChangeListener textListener = new OnFocusChangeListener(){
-
         @Override
         public void OnFocusChange(View v, boolean hasFocus){
             switch(v.getId()){
@@ -110,31 +109,31 @@ public class MainActivity extends AppCompatActivity {
                     personData.setPersonnelID(Integer.valueOf(PersonnelID.toString()));
                     break;
                 case R.id.editText1:
-
+                    personData.setName(Name.toString());
                     break;
                 case R.id.editText3:
-
+                    personData.setAddress(Address.toString());
                     break;
                 case R.id.editText4:
-
+                    personData.setPhone(PhoneNumber.toString());
                     break;
                 case R.id.editText5:
-
+                    personData.setEmail(Email.toString());
                     break;
                 case R.id.editText6:
-
+                    personData.setPosition(Position.toString());
                     break;
                 case R.id.editText7:
-
+                    personData.setSupervisorName(Supervisor.toString());
                     break;
                 case R.id.editText8:
-
+                    personData.setSupervisorRole(SupervisorPos.toString());
                     break;
                 case R.id.editText9:
-
+                    personData.setBirthDate(BirthDate.toString());
                     break;
                 case R.id.editText11:
-
+                    personData.setMarried(Married.toString());
                     break;
             }
         }

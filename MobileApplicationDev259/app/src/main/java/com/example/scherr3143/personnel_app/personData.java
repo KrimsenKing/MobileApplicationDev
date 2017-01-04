@@ -19,10 +19,10 @@ public class personData extends MainActivity {
     private String SupervisorRole;
     private String BirthDate;
     private int Age;
-    private char Married;
+    private String Married;
 
     public personData(int PersonnelID, int PictureID, String Name, String Address, String Phone, String Email,
-                      String Position, String SupervisorName, String SupervisorRole, String BirthDate,int Age,char Married)
+                      String Position, String SupervisorName, String SupervisorRole, String BirthDate,int Age,String Married)
     {
         setPersonnelID(PersonnelID);
         setPictureID(PictureID);
@@ -104,10 +104,10 @@ public class personData extends MainActivity {
     public void setAge(int age) {
         Age = age;
     }
-    public char getMarried() {
+    public String getMarried() {
         return Married;
     }
-    public void setMarried(char married) {
+    public void setMarried(String married) {
         Married = married;
     }
 }

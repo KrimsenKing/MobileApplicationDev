@@ -2,4 +2,7 @@
 <resources>
     <color name="steelBlue">#515169</color>
     <color name="boneWhite">#FFFFFF</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#FFFFFF</color>
 </resources>

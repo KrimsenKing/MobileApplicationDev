@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FlippyCard</string>
+
+    <string name="question_card">Question</string>
+    <string name="answer_card">Answer</string>
+
+</resources>

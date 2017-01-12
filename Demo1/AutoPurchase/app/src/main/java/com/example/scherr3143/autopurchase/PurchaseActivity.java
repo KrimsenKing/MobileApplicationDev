@@ -74,7 +74,7 @@ public class PurchaseActivity extends AppCompatActivity {
         loanReport += res.getString(R.string.report_line5);
     }
 
-    public void activaeLoanSummary(View view){
+    public void activateLoanSummary(View view){
         //Task 1: Build a loan report from the input data
         collectAutoInputData();
         buildLoanReport();

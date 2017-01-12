@@ -96,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     private OnFocusChangeListener textListener = new OnFocusChangeListener() {
 
-        public void OnFocusChange(View v, boolean hasFocus) {
+        @Override
+        public void onFocusChange(View v, boolean hasFocus) {
             if(!hasFocus) {
                 switch (v.getId()) {
                     case R.id.editText2:

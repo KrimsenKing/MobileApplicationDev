@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/airplane">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/strFromCity"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvFromCity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvFromCityResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvFromCity"
+        android:text="@string/strToCity"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvToCity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvFromCityResult"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvToCityResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvToCity"
+        android:text="@string/strDistance"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDistance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvToCityResult"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDistanceResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDistance"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/strTicketPrice"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvTicketPrice" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvDistanceResult"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvTicketPriceResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strBonusMile"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvTicketPrice"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvBonusMile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvTicketPriceResult"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvBonusMileResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strDiscounted"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvBonusMile"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDiscount" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/tvBonusMileResult"
+        android:text="@string/strDefaultValue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDiscountResult" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strGoBack"
+        android:onClick="goDataEntry"
+        android:id="@+id/button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

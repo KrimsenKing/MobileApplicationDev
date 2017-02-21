@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Travel Miles Calculator</string>
+    <string name="strTitle">Travel Miles Calculator</string>
+    <string name="strFromCity">From City</string>
+    <string name="strToCity">To City</string>
+    <string name="strCalculate">Calculate</string>
+    <string name="strDefaultValue">0</string>
+
+    <string name="strDistance">Distance</string>
+    <string name="strTicketPrice">Ticket Price</string>
+    <string name="strBonusMile">Bonus Miles</string>
+    <string name="strGoBack">Go Back</string>
+    <string name="strSelectCity">Select City</string>
+    <string name="strDiscount">Enter Discount Code</string>
+    <string name="strDiscounted">Discount Code</string>
+</resources>

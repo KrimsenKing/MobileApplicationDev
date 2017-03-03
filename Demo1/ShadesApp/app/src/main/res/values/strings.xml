@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShadesApp</string>
+    <string name="gold">GOLD</string>
+    <string name="blue">BLUE</string>
+    <string name="plum">PLUM</string>
+
+    <string name="plum_is">Plum is a deep purple colour. It is used in weddings.</string>
+    <string name="blue_is">Blue is the colour of peace and trust.</string>
+    <string name="gold_is">Gold is associated with sunshine and knowledge.</string>
+</resources>

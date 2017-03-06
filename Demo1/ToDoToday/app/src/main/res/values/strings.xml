@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">ToDoToday</string>
+    <string name="app_name">ToDo Today II</string>
+
+    <string name="add">Add TODO item</string>
+    <string name="task">Enter TODO item</string>
+    <string name="delete">Clear all TODOs</string>
+    <string name="desc">Description</string>
+
 </resources>

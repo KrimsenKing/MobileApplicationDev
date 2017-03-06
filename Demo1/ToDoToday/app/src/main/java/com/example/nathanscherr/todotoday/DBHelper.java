@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nathanscherr on 2017-03-05.
@@ -31,10 +32,9 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     public void onCreate(SQLiteDatabase database){
-        String sqlStatement = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_TASK_ID + " INTEGER PRIMARY KEY, "
+        String table = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_TASK_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + KEY_DESCRIPTION + " TEXT, " + KEY_IS_DONE + " INTEGER)";
-        database.execSQL(sqlStatement);
-        taskCount = 0;
+        database.execSQL(table);
     }
 
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
@@ -50,10 +50,6 @@ public class DBHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        taskCount++;
-        //Add KEY_VALUE pair information for the task count
-        values.put(KEY_TASK_ID, taskCount);
-
         //Add KEY_VALUE pair information for the task description
         values.put(KEY_DESCRIPTION, task.getDescription());
 
@@ -63,13 +59,49 @@ public class DBHelper extends SQLiteOpenHelper{
 
         //Insert database row into the table
         db.insert(DATABASE_TABLE, null, values);
+        taskCount++;
 
         //Close the database connection
         db.close();
     }
 
+    public List<ToDo_Item> getAllTasks(){
+
+        //Get all the task items on the list
+        List<ToDo_Item> todoList = new ArrayList<ToDo_Item>();
+
+        //Select all query from the table
+        String selectQuery = "SELECT * FROM " + DATABASE_TABLE;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        //Loop through the ToDo tasks
+        if(cursor.moveToFirst()){
+            do{
+                ToDo_Item task = new ToDo_Item();
+                task.setId(cursor.getInt(0));
+                task.setDescription(cursor.getString(1));
+                task.setIsDone(cursor.getInt(2));
+                todoList.add(task);
+            } while (cursor.moveToNext());
+        }
+
+        //Return list of tasks
+        return todoList;
+    }
+
+    public void clearAll(List<ToDo_Item> list){
+
+        //Get all the tasks from the list and clear them all
+        list.clear();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DATABASE_TABLE, null, new String[]{});
+        db.close();
+    }
     //Edit a task in the database
-    public void editToDoItem(ToDo_Item task){
+    public void updateTask(ToDo_Item task){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();

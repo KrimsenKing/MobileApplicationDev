@@ -90,7 +90,6 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_DETAIL, pet.getDetail());
         values.put(KEY_PHONE, pet.getPhone());
         values.put(KEY_IMAGEURI, pet.getPhotoURI().toString());
-        values.put(KEY_NAME, pet.getName());
 
         int rowsAffected = db.update(TABLE_NAME, values, KEY_ID + "=?", new String[]{String.valueOf(pet.getId())});
         db.close();

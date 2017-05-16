@@ -142,6 +142,8 @@ public class MainActivity extends AppCompatActivity {
                         String.valueOf(inputPhoneNumber.getText().toString()),
                         defaultImage);
                 dbHelper.updateContact(contactU);
+                contactArrayList.clear();
+                contactArrayList.addAll(dbHelper.getAllContacts());
                 arrayAdapter.notifyDataSetChanged();
                 Toast.makeText(getApplicationContext(), String.valueOf(inputContactName.getText())
                         + " has now been updated.", Toast.LENGTH_LONG).show();
@@ -156,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener deleteContactInformation = new View.OnClickListener(){
         public void onClick(View v) {
             dbHelper.deleteContact(curSelectedContact);
-            contactArrayList.remove(contactPosition);
+            contactArrayList.clear();
+            contactArrayList.addAll(dbHelper.getAllContacts());
             arrayAdapter.notifyDataSetChanged();
             newEntry = true;
             onResume();
@@ -208,20 +211,18 @@ public class MainActivity extends AppCompatActivity {
             listViewPhoto.setImageURI(currentContact.getPhotoUri());
 
             view.setTag(currentContact);
-            contactPosition = position;
-            curSelectedContact = currentContact;
+            //contactPosition = position;
 
             //attache onClick handler to view
             contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Contact contact = (Contact) view.getTag();
-
-                    inputContactName.setText(contact.getName());
-                    inputAddress.setText(contact.getAddress());
-                    inputPhoneNumber.setText(contact.getPhone());
-                    inputContactEmail.setText(contact.getEmail());
-                    inputPhotoId.setImageURI(contact.getPhotoUri());
+                    curSelectedContact = (Contact) view.getTag();
+                    inputContactName.setText(curSelectedContact.getName());
+                    inputAddress.setText(curSelectedContact.getAddress());
+                    inputPhoneNumber.setText(curSelectedContact.getPhone());
+                    inputContactEmail.setText(curSelectedContact.getEmail());
+                    inputPhotoId.setImageURI(curSelectedContact.getPhotoUri());
                 }
             });
             return view;
